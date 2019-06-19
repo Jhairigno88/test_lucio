@@ -9,7 +9,7 @@ import sincrono.corso.test_aTreTabelle.model.Automobile;
 import sincrono.corso.test_aTreTabelle.model.Motorino;
 import sincrono.corso.test_aTreTabelle.model.Persona;
 
-import java.io.FileOutputStream;
+
 public class Main {
 
 	
@@ -52,8 +52,8 @@ public class Main {
 		
 		ArrayList<Persona> persone= new ArrayList<Persona>() ;
 			
-			for (int i=0;i<1;i++) {
-			System.out.println(i+1);
+			for (int i=0;i<2;i++) {
+			p.setId(i+1);
 			System.out.println("inserisci il nome di una persona!");
 			p.setNome(scn.nextLine());
 			
@@ -61,11 +61,18 @@ public class Main {
 			p.setCognome(scn.nextLine());
 			
 			System.out.println("inserisci il suo codice fiscale ");
-			p.setNome(scn.nextLine());
+			p.setCodicefiscale(scn.nextLine());
 			
 			System.out.println("inserisci l'indirizzo del suo domicilio");
-			p.setNome(scn.nextLine());
+			p.setIndirizzo(scn.nextLine());
 			persone.add(p);
+			
+			PrintWriter scrivi= new PrintWriter(A);
+			scrivi.println("Elenco Persone");
+			scrivi.println(p.getId() + "Nome: " + p.GetNome() + " Cognome: " + p.getCognome() + 
+							" Codice fiscale: " + p.getCodicefiscale() + 
+							" indirizzo: " + p.getIndirizzo());
+			scrivi.close();
 			
 			
 			System.out.println("questa persona ha un mezzo di locomozione?");
@@ -79,28 +86,30 @@ public class Main {
 					m.setModello(scn.nextLine());
 					System.out.println("e la sua targa:");
 					m.setTarga(scn.nextLine());
+					
+					PrintWriter scrivia = new PrintWriter(M);
+					scrivia.println("mezzi di trasporto:");
+					scrivia.println("Modello: "+ a.getModello()+" Targa:"+a.getTarga());
+					scrivia.close();
 				}
 				else {
 					System.out.println("inserisci il modello del mezzo");
 					a.setModello(scn.nextLine());
 					System.out.println("e la sua targa:");
 					a.setTarga(scn.nextLine());
+					
+					PrintWriter scrivia = new PrintWriter(M);
+					scrivia.println("mezzi di trasporto:");
+					scrivia.println("Modello: "+ a.getModello()+" Targa:"+a.getTarga());
+					scrivia.close();
 				}
 				
 			}
 			
-			PrintWriter scrivi= new PrintWriter(A);
-			scrivi.println("Elenco Persone");
-			scrivi.println("nome: " + p.GetNome() + " Cognome: " + p.getCognome() + 
-							" Codice fiscale: " + p.getCodicefiscale() + 
-							" indirizzo: " + p.getIndirizzo());
-			scrivi.close();
+			
 		
 			
-			PrintWriter scrivim=new PrintWriter(M);
-			scrivim.println("Elenco mezzi di locomozione");
-			scrivim.println("Tipo di mezzo: " + m.getModello() + " Targa: " + m.getTarga());
-			scrivim.close();
+			
 		
 			
 			
@@ -109,7 +118,7 @@ public class Main {
 
 		
 
-
+			scn.close();
 
 	}
 

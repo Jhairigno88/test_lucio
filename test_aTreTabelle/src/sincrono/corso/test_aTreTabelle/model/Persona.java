@@ -6,7 +6,7 @@ public class Persona {
 	
 	private String nome;
 	private String cognome;
-	private int codicefiscale;
+	private String codicefiscale;
 	private String indirizzo;
 	
 	public Persona() {};
@@ -32,10 +32,10 @@ public class Persona {
 	public void setCognome(String cognome) {
 		this.cognome = cognome;
 	}
-	public int getCodicefiscale() {
+	public String getCodicefiscale() {
 		return codicefiscale;
 	}
-	public void setCodicefiscale(int codicefiscale) {
+	public void setCodicefiscale(String codicefiscale) {
 		this.codicefiscale = codicefiscale;
 	}
 	public String getIndirizzo() {

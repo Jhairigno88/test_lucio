@@ -1,2 +1,2 @@
-Elenco mezzi di locomozione
-Tipo di mezzo: null Targa: null
+mezzi di trasporto:
+Modello: chevrolet spark 2014 Targa:ev354fg
